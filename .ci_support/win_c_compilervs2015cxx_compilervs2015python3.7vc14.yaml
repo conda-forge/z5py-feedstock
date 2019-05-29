@@ -1,5 +1,7 @@
+CMAKE_GENERATOR:
+- NMake Makefiles
 boost_cpp:
-- 1.68.0
+- 1.70.0
 bzip2:
 - '1'
 c_compiler:
@@ -11,7 +13,7 @@ channel_targets:
 cxx_compiler:
 - vs2015
 numpy:
-- '1.11'
+- '1.14'
 pin_run_as_build:
   boost-cpp:
     max_pin: x.x.x
