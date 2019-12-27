@@ -14,8 +14,6 @@ cxx_compiler:
 - clangxx
 cxx_compiler_version:
 - '9'
-lz4_c:
-- 1.8.3
 macos_machine:
 - x86_64-apple-darwin13.4.0
 macos_min_version:
@@ -25,8 +23,6 @@ numpy:
 pin_run_as_build:
   bzip2:
     max_pin: x
-  lz4-c:
-    max_pin: x.x.x
   python:
     min_pin: x.x
     max_pin: x.x
