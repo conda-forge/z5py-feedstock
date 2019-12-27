@@ -23,14 +23,18 @@ requirements:
     - python
     - boost-cpp >=1.63
     - numpy
-    - xtensor >=0.19,<0.20
-    - xtensor-python >=0.22,<0.23
-    - xsimd >=7,<8
+    - xtensor >=0.21,<0.22
+    - xtensor-python >=0.24,<0.25
+    - nlohmann_json
     - blosc
     - bzip2
     - xz
     - zlib
-    - nlohmann_json
+
+    # not sure if it's clever to build with xsimd on conda
+    # for a proper build with vec instructions,
+    # would need to make the build architecture specific
+    # - xsimd >=7,<8
     # lz4 builds on conda are broken
     # - lz4-c
   run:
