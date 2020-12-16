@@ -10,9 +10,7 @@ source:
     sha256: {{ checksum }}
 
 build:
-  number: 1
-  skip: True  # [win and vc<14]
-  skip: True  # [py27]
+  number: 2
 
 requirements:
   build:
@@ -22,7 +20,7 @@ requirements:
     - ninja  # [win]
   host:
     - python
-    - boost-cpp >=1.63
+    - boost-cpp
     - numpy
     - xtensor >=0.19,<0.20
     - xtensor-python >=0.22,<0.23
