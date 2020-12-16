@@ -5,11 +5,9 @@ Home: https://github.com/constantinpape/z5
 
 Package license: MIT
 
-Feedstock license: BSD-3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/z5py-feedstock/blob/master/LICENSE.txt)
 
 Summary: Lightweight C++ and Python interface for datasets in zarr and N5 format.
-
-
 
 Current build status
 ====================
