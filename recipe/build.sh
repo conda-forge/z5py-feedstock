@@ -37,7 +37,7 @@ cmake .. \
         -DWITH_ZLIB=ON \
         -DWITH_BZIP2=ON \
         -DWITH_XZ=ON \
-        -DWITH_LZ4=OFF \
+        -DWITH_LZ4=ON \
         -DWITHIN_TRAVIS=OFF \
         -DWITH_BOOST_FS=${BOOST_FS} \
 

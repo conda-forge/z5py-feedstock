@@ -12,7 +12,7 @@ cmake .. -GNinja ^
          -DWITH_ZLIB=ON ^
          -DWITH_BZIP2=ON ^
          -DWITH_XZ=ON ^
-         -DWITH_LZ4=OFF ^
+         -DWITH_LZ4=ON ^
          -DWITHIN_TRAVIS=OFF ^
          -DBUILD_Z5PY=ON ^
          -DPYTHON_EXECUTABLE="%PYTHON%"
