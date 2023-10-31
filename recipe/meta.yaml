@@ -25,7 +25,6 @@ requirements:
     - make  # [not win]
   host:
     - python
-    - libboost-headers
     - numpy
     - xtensor >=0.24,<0.25
     - xtensor-python >=0.26,<0.27
