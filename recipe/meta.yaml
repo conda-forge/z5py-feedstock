@@ -11,7 +11,7 @@ source:
   patches:
     - python_site.patch
 build:
-  number: 1
+  number: 2
   skip: true  # [win and vc<14]
 
 requirements:
@@ -33,7 +33,7 @@ requirements:
     - xsimd >=10,<11
     - blosc
     - bzip2
-    - xz
+    - liblzma-devel
     - zlib
     - nlohmann_json
     # lz4 builds on conda are broken
@@ -42,7 +42,7 @@ requirements:
     - python
     - blosc
     - bzip2
-    - xz
+    - liblzma-devel
     - zlib
     # lz4 builds on conda are broken
     # - lz4-c
