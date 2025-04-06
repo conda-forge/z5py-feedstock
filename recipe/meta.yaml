@@ -1,5 +1,5 @@
-{% set version = "2.0.18" %}
-{% set checksum = "210d92a6e51bbad3226b5c6bad5b40564adb52a63638ef76687c6b90580239ba" %}
+{% set version = "2.0.19" %}
+{% set checksum = "99ea3906b2e708d09f0fd8d8828985f96594eb507fc5de6c1726ea7ac1e6ac08" %}
 
 package:
   name: z5py
@@ -8,10 +8,8 @@ package:
 source:
   url: https://github.com/constantinpape/z5/archive/{{ version }}.tar.gz
   sha256: {{ checksum }}
-  patches:
-    - python_site.patch
 build:
-  number: 1
+  number: 0
   skip: true  # [win and vc<14]
 
 requirements:
@@ -51,7 +49,7 @@ test:
   imports:
     - z5py
   requires:
-    - zarr
+    - zarr <3
   source_files:
     - src/python/test/*.py
   commands:
