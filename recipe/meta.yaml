@@ -9,7 +9,7 @@ source:
   url: https://github.com/constantinpape/z5/archive/{{ version }}.tar.gz
   sha256: {{ checksum }}
 build:
-  number: 0
+  number: 1
   skip: true  # [win and vc<14]
 
 requirements:
@@ -31,7 +31,7 @@ requirements:
     - xsimd >=10,<11
     - blosc
     - bzip2
-    - xz
+    - liblzma-devel
     - zlib
     - nlohmann_json
     # lz4 builds on conda are broken
@@ -40,7 +40,7 @@ requirements:
     - python
     - blosc
     - bzip2
-    - xz
+    - liblzma-devel
     - zlib
     # lz4 builds on conda are broken
     # - lz4-c
