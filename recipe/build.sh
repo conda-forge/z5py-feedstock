@@ -33,7 +33,8 @@ cmake ${CMAKE_ARGS} .. \
         -DWITH_ZLIB=ON \
         -DWITH_BZIP2=ON \
         -DWITH_XZ=ON \
-        -DWITH_LZ4=OFF \
+        -DWITH_LZ4=ON \
+        -DWITH_ZSTD=ON \
         -DWITHIN_TRAVIS=OFF \
 
 

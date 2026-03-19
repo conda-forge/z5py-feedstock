@@ -1,5 +1,5 @@
-{% set version = "2.0.20" %}
-{% set checksum = "e0bee8b3a92b7b674891bc9e1fc3bf73ede5837afa87e6c2ac9228a7e095a4b9" %}
+{% set version = "2.1.2" %}
+{% set checksum = "d61fcfea3a05266bc99f0a551c091bbdb4798cf12721df0cf70b49d9a55bba3f" %}
 
 package:
   name: z5py
@@ -9,7 +9,7 @@ source:
   url: https://github.com/constantinpape/z5/archive/{{ version }}.tar.gz
   sha256: {{ checksum }}
 build:
-  number: 2
+  number: 0
 
 requirements:
   build:
@@ -25,16 +25,15 @@ requirements:
   host:
     - python
     - numpy
-    - xtensor >=0.26,<0.27
-    - xtensor-python >=0.28,<0.29
+    - xtensor >=0.27,<0.28
+    - xtensor-python >=0.29,<0.30
     - xsimd >=13,<14
     - blosc
     - bzip2
     - liblzma-devel
     - zlib
     - nlohmann_json
-    # lz4 builds on conda are broken
-    # - lz4-c
+    - lz4-c
   run:
     - python
 
@@ -42,7 +41,7 @@ test:
   imports:
     - z5py
   requires:
-    - zarr <3
+    - zarr
   source_files:
     - src/python/test/*.py
   commands:
