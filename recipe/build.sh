@@ -28,6 +28,7 @@ cmake ${CMAKE_ARGS} .. \
         -DCMAKE_CXX_FLAGS_DEBUG="${CXXFLAGS}" \
 \
         -DPYTHON_EXECUTABLE=${PYTHON_EXECUTABLE} \
+        -DPYTHON_MODULE_INSTALL_DIR=${SP_DIR} \
         -DBUILD_Z5PY=ON \
         -DWITH_BLOSC=ON \
         -DWITH_ZLIB=ON \
@@ -43,3 +44,9 @@ cmake ${CMAKE_ARGS} .. \
 ##
 make -j${CPU_COUNT}
 make install
+
+# Cross-compiled packages cannot reliably run their target Python during the
+# build. Check the staged payload directly so a package containing only the C++
+# headers cannot be published as z5py.
+test -f "${SP_DIR}/z5py/__init__.py"
+test -f "${SP_DIR}"/z5py/_z5py*.so
