@@ -27,7 +27,8 @@ cmake ${CMAKE_ARGS} .. \
         -DCMAKE_CXX_FLAGS_RELEASE="${CXXFLAGS} -O3 -DNDEBUG" \
         -DCMAKE_CXX_FLAGS_DEBUG="${CXXFLAGS}" \
 \
-        -DPYTHON_EXECUTABLE=${PYTHON_EXECUTABLE} \
+        -DPython_EXECUTABLE=${PYTHON_EXECUTABLE} \
+        -DPython_INCLUDE_DIR=${PREFIX}/include/python${PY_VER} \
         -DPYTHON_MODULE_INSTALL_DIR=${SP_DIR} \
         -DBUILD_Z5PY=ON \
         -DWITH_BLOSC=ON \
