@@ -9,7 +9,7 @@ source:
   url: https://github.com/constantinpape/z5/archive/{{ version }}.tar.gz
   sha256: {{ checksum }}
 build:
-  number: 2
+  number: 3
   skip: true  # [py<311]
 
 requirements:
@@ -43,11 +43,14 @@ test:
   imports:
     - z5py
   requires:
+    - pip
     - zarr >=3
     - tensorstore  # [not win]
   source_files:
     - src/python/test/*.py
   commands:
+    - python -c "from importlib.metadata import version; assert version('z5py') == '{{ version }}'"
+    - python -m pip show z5py
     - python -m unittest discover -s src/python/test -v
 
 about:
