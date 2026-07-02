@@ -18,3 +18,8 @@ cmake .. -GNinja ^
          -DPYTHON_EXECUTABLE="%PYTHON%"
 
 cmake --build . --config %CONFIGURATION% --target install
+
+REM The direct CMake install bypasses the Python build backend, so create the
+REM distribution metadata that importlib.metadata and pip use for dependency
+REM resolution.
+"%PYTHON%" "%RECIPE_DIR%\write_dist_info.py" "%SP_DIR%" "%PKG_VERSION%"

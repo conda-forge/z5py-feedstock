@@ -51,3 +51,14 @@ make install
 # headers cannot be published as z5py.
 test -f "${SP_DIR}/z5py/__init__.py"
 test -f "${SP_DIR}"/z5py/_z5py*.so
+
+# The direct CMake install bypasses the Python build backend, so create the
+# distribution metadata that importlib.metadata and pip use for dependency
+# resolution. Use the build interpreter when cross-compiling because the
+# target interpreter cannot run on the build platform.
+if [[ "${CONDA_BUILD_CROSS_COMPILATION:-0}" == "1" ]]; then
+    METADATA_PYTHON="${BUILD_PREFIX}/bin/python"
+else
+    METADATA_PYTHON="${PYTHON}"
+fi
+"${METADATA_PYTHON}" "${RECIPE_DIR}/write_dist_info.py" "${SP_DIR}" "${PKG_VERSION}"
